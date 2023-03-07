@@ -1,31 +1,13 @@
-{% load static %}
-<html>
-    <head>
-        <title>TODOlist</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/todo.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Мой список задач</a></h1>
-        </div>
+{% extends 'todo/base.html' %}
 
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for todo in todos %}
-                        <div class="todo">
-                            <h1><a href="">{{ todo.title }}</a></h1>
-                            <p>{{ todo.text|linebreaksbr }}</p>
-                            <div class="date">
-                                <p>Опубликовано: {{ todo.created_date }}</p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+{% block content %}
+    {% for todo in todos %}
+        <div class="todo">
+            <h1><a href="">{{ todo.title }}</a></h1>
+            <p>{{ todo.text|linebreaksbr }}</p>
+            <div class="date">
+                <p>Опубликовано: {{ todo.created_date }}</p>
             </div>
         </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
