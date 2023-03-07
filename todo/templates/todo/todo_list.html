@@ -7,14 +7,12 @@
             <h1><a href="/">TODOlist</a></h1>
         </div>
 
+    {% for todo in todos %}
         <div>
-            <h2><a href="">My first TODO</a></h2>
-            <p>Купить молоко</p>
+            <h1><a href="">{{ todo.title }}</a></h1>
+            <p>{{ todo.text|linebreaksbr }}</p>
+            <p>Создано: {{ todo.created_date }}</p>
         </div>
-
-        <div>
-            <h2><a href="">My second TODO</a></h2>
-            <p>Купить хлеб</p>
-        </div>
+    {% endfor %}
     </body>
 </html>
