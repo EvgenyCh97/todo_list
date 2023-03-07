@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Evgeny Chayka"]
 readme = "README.md"
-packages = [{include = "todo_list"}]
+packages = [{include = 'todolist'}]
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
